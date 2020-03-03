@@ -1,0 +1,29 @@
+{
+  "name": "rest-api-doc-lambda",
+  "version": "2.0.0",
+  "description": "rest-api doc lambda",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/.",
+    "start": "node index.js",
+    "local": "node local.js",
+    "test": "mocha --timeout 15000",
+    "build": "ncc build index.js -o dist && terser -o dist/uploadLambda.js --compress -- dist/index.js"
+  },
+  "author": "karl-lauret",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "2.485.0",
+    "blob": "^0.1.0",
+    "cross-blob": "^1.2.1",
+    "global": "^4.4.0",
+    "lodash": "4.17.14",
+    "request": "2.88.0",
+    "request-promise": "4.2.4",
+    "serverless": "^1.65.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "0.20.4",
+    "terser": "4.1.2"
+  }
+}
